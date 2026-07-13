@@ -138,9 +138,37 @@
 
   /* ---------- HERO ---------- */
   .hero {
-    padding: 110px 0 70px;
+    padding: 70px 0 70px;
     text-align: center;
     position: relative;
+  }
+  .lensy-wrap {
+    width: 210px;
+    margin: 0 auto 10px;
+    animation: lensy-bob 3.2s ease-in-out infinite;
+  }
+  .lensy-wrap svg { width: 100%; height: auto; display: block; }
+  @keyframes lensy-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+  }
+  .lensy-tally {
+    animation: tally-blink 1.6s steps(1) infinite;
+  }
+  @keyframes tally-blink {
+    0%, 60% { opacity: 0.95; }
+    61%, 100% { opacity: 0.25; }
+  }
+  .lensy-iris {
+    transform-origin: 350px 215px;
+    animation: lensy-wink 6s ease-in-out infinite;
+  }
+  @keyframes lensy-wink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    93%, 95% { transform: scaleY(0.1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lensy-wrap, .lensy-tally, .lensy-iris { animation: none; }
   }
   .hero h1 {
     font-size: clamp(3.2rem, 9vw, 7rem);
@@ -518,6 +546,56 @@
 
   <!-- HERO -->
   <section class="hero wrap">
+    <div class="lensy-wrap" aria-hidden="true">
+      <svg viewBox="130 60 460 540" xmlns="http://www.w3.org/2000/svg">
+        <!-- legs -->
+        <path fill="none" stroke="#d4af6a" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M320 462 L310 520 L305 565"/>
+        <rect x="280" y="558" width="50" height="22" rx="11" fill="#d4af6a"/>
+        <path fill="none" stroke="#d4af6a" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M385 462 L395 520 L400 565"/>
+        <rect x="375" y="558" width="50" height="22" rx="11" fill="#d4af6a"/>
+        <!-- torso -->
+        <path fill="none" stroke="#d4af6a" stroke-width="9" stroke-linejoin="round" d="M270 340 Q255 400 268 440 Q280 470 355 472 Q430 470 442 440 Q452 400 435 340 Q355 322 270 340 Z"/>
+        <line x1="290" y1="380" x2="420" y2="380" stroke="#d4af6a" stroke-opacity="0.35" stroke-width="4"/>
+        <circle cx="305" cy="410" r="6" fill="#d4af6a" opacity="0.6"/>
+        <circle cx="325" cy="410" r="6" fill="#d4af6a" opacity="0.6"/>
+        <!-- right arm akimbo -->
+        <path fill="none" stroke="#d4af6a" stroke-width="13" stroke-linecap="round" d="M425 360 Q470 375 465 415 Q462 435 435 442"/>
+        <!-- scarf -->
+        <path fill="#f2ca83" d="M320 330 Q350 355 380 330 L370 350 Q350 365 330 350 Z"/>
+        <!-- left arm + clapperboard -->
+        <path fill="none" stroke="#d4af6a" stroke-width="13" stroke-linecap="round" d="M285 355 Q225 330 205 270 Q198 245 215 225"/>
+        <circle cx="218" cy="216" r="22" fill="#d4af6a"/>
+        <g transform="translate(190,175) rotate(-18)">
+          <rect x="0" y="14" width="52" height="34" rx="3" fill="#2e1b47" stroke="#d4af6a" stroke-width="5"/>
+          <rect x="-2" y="0" width="56" height="16" rx="3" fill="#d4af6a"/>
+          <line x1="4" y1="8" x2="14" y2="0" stroke="#2e1b47" stroke-width="4"/>
+          <line x1="20" y1="8" x2="30" y2="0" stroke="#2e1b47" stroke-width="4"/>
+          <line x1="36" y1="8" x2="46" y2="0" stroke="#2e1b47" stroke-width="4"/>
+        </g>
+        <!-- head -->
+        <g transform="rotate(-7 350 210)">
+          <rect x="322" y="90" width="56" height="28" rx="6" fill="none" stroke="#d4af6a" stroke-width="9"/>
+          <circle cx="350" cy="205" r="105" fill="#2e1b47" stroke="#d4af6a" stroke-width="9"/>
+          <circle cx="255" cy="185" r="11" fill="#d4af6a"/>
+          <circle cx="445" cy="185" r="11" fill="#d4af6a"/>
+          <circle cx="255" cy="185" r="4" fill="#150c28"/>
+          <circle cx="445" cy="185" r="4" fill="#150c28"/>
+          <g class="lensy-iris">
+            <circle cx="350" cy="215" r="58" fill="none" stroke="#d4af6a" stroke-width="9"/>
+            <circle cx="350" cy="215" r="42" fill="#1c1130" stroke="#d4af6a" stroke-width="4"/>
+            <path d="M350 215 L350 178 A37 37 0 0 1 382 197 Z" fill="#d4af6a" opacity="0.85"/>
+            <path d="M350 215 L382 197 A37 37 0 0 1 382 233 Z" fill="#f2ca83" opacity="0.9"/>
+            <path d="M350 215 L382 233 A37 37 0 0 1 350 252 Z" fill="#d4af6a" opacity="0.7"/>
+            <path d="M350 215 L350 252 A37 37 0 0 1 318 197 Z" fill="#f2ca83" opacity="0.75"/>
+            <circle cx="350" cy="215" r="16" fill="#150c28"/>
+            <circle cx="357" cy="207" r="6" fill="#f3ede4"/>
+          </g>
+          <path d="M295 145 Q315 128 345 138" fill="none" stroke="#d4af6a" stroke-width="8" stroke-linecap="round"/>
+          <path d="M320 300 Q350 316 390 296" fill="none" stroke="#d4af6a" stroke-width="8" stroke-linecap="round"/>
+          <circle class="lensy-tally" cx="440" cy="260" r="9" fill="#f2ca83"/>
+        </g>
+      </svg>
+    </div>
     <span class="eyebrow">A ReelRastha Production</span>
     <h1>ReelRastha</h1>
     <p class="tagline">No agenda, no script — just me, yelling about cinema into the void.</p>
