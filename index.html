@@ -3,22 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ReelRastha — Cinema Opinions & Content Studio</title>
-<meta name="description" content="ReelRastha: unfiltered cinema opinions on Instagram, and a content studio building the same reel-to-rastha pipeline for other brands.">
+<title>ReelRastha — Cinema Opinions and Film Marketing Studio</title>
+<meta name="description" content="Original opinions on Indian and world cinema, plus social-first storytelling and campaign content for films, filmmakers, and creators.">
+<meta property="og:title" content="ReelRastha — Cinema Opinions and Film Marketing Studio">
+<meta property="og:description" content="Opinions for audiences. Storytelling for films.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,600&family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #120a22;
-    --plum: #291a42;
-    --plum-light: #46295f;
-    --plum-lighter: #6a3f8c;
-    --gold: #d4af6a;
-    --gold-bright: #f2ca83;
-    --ivory: #f3ede4;
-    --muted: #b7a8c9;
-    --charcoal: #1a1512;
+    /* Brief palette */
+    --indigo: #241B4B;
+    --royal: #5C2D91;
+    --gold: #F2B84B;
+    --gold-soft: #f5c76e;
+    --cream: #F8F3E8;
+    --ink: #1D1A23;
+    /* derived */
+    --indigo-deep: #16102e;
+    --royal-soft: #6f3aa8;
+    --muted: #b9aecd;
 
     --font-display: 'Playfair Display', serif;
     --font-label: 'Oswald', sans-serif;
@@ -32,21 +37,18 @@
 
   body {
     margin: 0;
-    background: radial-gradient(ellipse 120% 60% at 50% -10%, var(--plum-light), var(--ink) 65%);
-    background-color: var(--ink);
-    color: var(--ivory);
+    background: radial-gradient(ellipse 120% 60% at 50% -10%, var(--royal), var(--indigo-deep) 65%);
+    background-color: var(--indigo-deep);
+    color: var(--cream);
     font-family: var(--font-body);
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   a { color: inherit; }
 
-  .wrap {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+  .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
   .eyebrow {
     font-family: var(--font-label);
@@ -58,463 +60,202 @@
     display: inline-block;
     margin-bottom: 18px;
   }
+  .kicker {
+    font-family: var(--font-label);
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+  }
 
   h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; }
 
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
   /* ---------- NAV ---------- */
   header.nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    position: sticky; top: 0; z-index: 50;
     backdrop-filter: blur(10px);
-    background: rgba(18, 10, 34, 0.72);
-    border-bottom: 1px solid rgba(212, 175, 106, 0.18);
+    background: rgba(22, 16, 46, 0.78);
+    border-bottom: 1px solid rgba(242, 184, 75, 0.18);
   }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 24px;
-  }
-  .brand-mark {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
+  .brand-mark { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .brand-mark svg { color: var(--gold); flex-shrink: 0; }
-  .brand-mark span {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--ivory);
-  }
-  nav.links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+  .brand-mark span { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--cream); }
+  nav.links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
   nav.links a {
-    font-family: var(--font-label);
-    font-size: 0.82rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-    transition: color 0.2s ease;
-    white-space: nowrap;
+    font-family: var(--font-label); font-size: 0.82rem; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; color: var(--muted);
+    transition: color 0.2s ease; white-space: nowrap;
   }
-  nav.links a:hover { color: var(--gold-bright); }
-
+  nav.links a:hover { color: var(--gold-soft); }
   .nav-cta {
-    font-family: var(--font-label);
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 9px 18px;
-    border-radius: 999px;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+    font-family: var(--font-label); font-size: 0.78rem; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold);
+    color: var(--gold); padding: 9px 18px; border-radius: 999px; transition: all 0.2s ease; white-space: nowrap;
   }
-  .nav-cta:hover { background: var(--gold); color: var(--charcoal); }
-
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    border-radius: 8px;
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
+  .nav-cta:hover { background: var(--gold); color: var(--ink); }
+  .menu-toggle { display: none; background: none; border: 1px solid var(--gold); color: var(--gold); border-radius: 8px; width: 40px; height: 40px; font-size: 1.1rem; cursor: pointer; }
 
   /* ---------- HERO ---------- */
-  .hero {
-    padding: 70px 0 70px;
-    text-align: center;
-    position: relative;
-  }
-  .lensy-wrap {
-    width: 210px;
-    margin: 0 auto 10px;
-    animation: lensy-bob 3.2s ease-in-out infinite;
-  }
+  .hero { padding: 60px 0 60px; text-align: center; position: relative; }
+  .lensy-wrap { width: 170px; margin: 0 auto 6px; animation: lensy-bob 3.2s ease-in-out infinite; }
   .lensy-wrap svg { width: 100%; height: auto; display: block; }
-  @keyframes lensy-bob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-9px); }
-  }
-  .lensy-tally {
-    animation: tally-blink 1.6s steps(1) infinite;
-  }
-  @keyframes tally-blink {
-    0%, 60% { opacity: 0.95; }
-    61%, 100% { opacity: 0.25; }
-  }
-  .lensy-iris {
-    transform-origin: 350px 215px;
-    animation: lensy-wink 6s ease-in-out infinite;
-  }
-  @keyframes lensy-wink {
-    0%, 90%, 100% { transform: scaleY(1); }
-    93%, 95% { transform: scaleY(0.1); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .lensy-wrap, .lensy-tally, .lensy-iris { animation: none; }
-  }
-  .hero h1 {
-    font-size: clamp(3.2rem, 9vw, 7rem);
-    line-height: 0.98;
-    background: linear-gradient(180deg, var(--ivory) 30%, var(--gold-bright) 130%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .hero .tagline {
-    max-width: 560px;
-    margin: 26px auto 0;
-    font-size: 1.15rem;
-    color: var(--muted);
-  }
-  .hero-ctas {
-    margin-top: 40px;
-    display: flex;
-    gap: 18px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .btn {
-    font-family: var(--font-label);
-    font-size: 0.85rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 999px;
-    display: inline-block;
-    transition: all 0.2s ease;
-  }
-  .btn-solid { background: var(--gold); color: var(--charcoal); border: 1px solid var(--gold); }
-  .btn-solid:hover { background: var(--gold-bright); border-color: var(--gold-bright); transform: translateY(-1px); }
-  .btn-ghost { border: 1px solid rgba(212,175,106,0.5); color: var(--gold-bright); }
-  .btn-ghost:hover { border-color: var(--gold); background: rgba(212,175,106,0.08); }
+  @keyframes lensy-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  .lensy-tally { animation: tally-blink 1.6s steps(1) infinite; }
+  @keyframes tally-blink { 0%,60% { opacity: 0.95; } 61%,100% { opacity: 0.25; } }
+  .lensy-iris { transform-origin: 350px 215px; animation: lensy-wink 6s ease-in-out infinite; }
+  @keyframes lensy-wink { 0%,90%,100% { transform: scaleY(1); } 93%,95% { transform: scaleY(0.1); } }
 
-  /* ---------- TICKER ---------- */
-  .ticker-band {
-    position: relative;
-    overflow: hidden;
-    background: var(--plum);
-    border-top: 1px solid rgba(212,175,106,0.3);
-    border-bottom: 1px solid rgba(212,175,106,0.3);
-    padding: 16px 0;
+  .hero h1 {
+    font-size: clamp(2.6rem, 6.5vw, 5rem);
+    line-height: 1.02;
+    max-width: 15ch;
+    margin: 8px auto 0;
+    background: linear-gradient(180deg, var(--cream) 30%, var(--gold-soft) 130%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .ticker-band::before,
-  .ticker-band::after {
-    content: "";
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 100%;
-    height: 4px;
-    background-image: radial-gradient(circle, var(--ink) 2.5px, transparent 2.6px);
-    background-size: 20px 4px;
-    background-repeat: repeat-x;
+  .hero .subhead { max-width: 620px; margin: 24px auto 0; font-size: 1.15rem; color: var(--cream); opacity: 0.92; }
+  .hero .personality { max-width: 540px; margin: 18px auto 0; font-size: 1rem; color: var(--muted); font-style: italic; }
+  .hero-ctas { margin-top: 36px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--font-label); font-size: 0.85rem; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; padding: 15px 30px; border-radius: 999px;
+    display: inline-block; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent;
   }
-  .ticker-band::before { top: 0; }
-  .ticker-band::after { bottom: 0; }
-  .ticker-track {
-    display: flex;
-    width: max-content;
-    animation: scroll-left 32s linear infinite;
+  .btn-solid { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+  .btn-solid:hover { background: var(--gold-soft); border-color: var(--gold-soft); transform: translateY(-1px); }
+  .btn-ghost { border-color: rgba(242,184,75,0.55); color: var(--gold-soft); }
+  .btn-ghost:hover { border-color: var(--gold); background: rgba(242,184,75,0.08); }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust-strip {
+    border-top: 1px solid rgba(242,184,75,0.2);
+    border-bottom: 1px solid rgba(242,184,75,0.2);
+    background: rgba(92, 45, 145, 0.18);
+    padding: 18px 0;
   }
-  .ticker-track span {
-    font-family: var(--font-label);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    color: var(--gold-bright);
-    padding: 0 28px;
-    white-space: nowrap;
+  .trust-inner {
+    display: flex; justify-content: center; align-items: center; gap: 14px 34px; flex-wrap: wrap;
+    font-family: var(--font-label); letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.8rem; color: var(--gold-soft);
   }
-  @keyframes scroll-left {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
+  .trust-inner span { white-space: nowrap; }
+  .trust-inner .dot { color: var(--gold); opacity: 0.6; }
 
   /* ---------- SECTIONS ---------- */
-  .section {
-    padding: 100px 0;
-  }
-  .section-head {
-    text-align: center;
-    max-width: 620px;
-    margin: 0 auto 56px;
-  }
-  .section-head h2 {
-    font-size: clamp(2rem, 4.2vw, 2.9rem);
-    margin-bottom: 18px;
-  }
+  .section { padding: 92px 0; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 52px; }
+  .section-head h2 { font-size: clamp(2rem, 4.2vw, 2.8rem); margin-bottom: 16px; }
   .section-head p { color: var(--muted); font-size: 1.05rem; }
 
-  /* ---------- PORTFOLIO CARDS ---------- */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-  }
+  /* ---------- OPINIONS ---------- */
+  .opinions-intro { max-width: 640px; margin: 0 auto 44px; text-align: center; }
+  .opinions-intro .body { color: var(--muted); font-size: 1.05rem; margin-top: 14px; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
   .opinion-card {
-    background: radial-gradient(ellipse at 30% 0%, var(--plum-lighter), var(--plum) 75%);
-    border: 1px solid rgba(212,175,106,0.35);
-    border-radius: 4px;
-    aspect-ratio: 1 / 1;
-    padding: 30px 26px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
+    background: radial-gradient(ellipse at 30% 0%, var(--royal-soft), var(--royal) 78%);
+    border: 1px solid rgba(242,184,75,0.35); border-radius: 6px;
+    aspect-ratio: 1 / 1; padding: 30px 26px; display: flex; flex-direction: column;
+    justify-content: space-between; position: relative; overflow: hidden;
   }
-  .opinion-card::before {
-    content: "";
-    position: absolute;
-    inset: 10px;
-    border: 1px solid rgba(212,175,106,0.25);
-    pointer-events: none;
-  }
-  .oc-eyebrow {
-    font-family: var(--font-label);
-    font-size: 0.66rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .oc-title {
-    font-family: var(--font-display);
-    font-size: 1.7rem;
-    line-height: 1.15;
-    margin: 14px 0 12px;
-    color: var(--ivory);
-  }
-  .oc-body {
-    font-size: 0.92rem;
-    color: var(--muted);
-    flex-grow: 1;
-  }
-  .oc-divider {
-    height: 1px;
-    background: rgba(212,175,106,0.4);
-    margin: 16px 0 12px;
-  }
-  .oc-footer {
-    font-family: var(--font-label);
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-align: right;
-  }
+  .opinion-card::before { content: ""; position: absolute; inset: 10px; border: 1px solid rgba(242,184,75,0.25); pointer-events: none; }
+  .oc-eyebrow { font-family: var(--font-label); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .oc-title { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.15; margin: 14px 0 12px; color: var(--cream); }
+  .oc-body { font-size: 0.92rem; color: var(--muted); flex-grow: 1; }
+  .oc-divider { height: 1px; background: rgba(242,184,75,0.4); margin: 16px 0 12px; }
+  .oc-footer { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: right; }
+  .opinions-note { text-align: center; margin-top: 42px; color: var(--muted); font-size: 0.95rem; }
+  .opinions-note a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid var(--gold); }
 
-  .portfolio-note {
-    text-align: center;
-    margin-top: 44px;
-    color: var(--muted);
-    font-size: 0.95rem;
+  /* ---------- ABOUT / FOUNDER ---------- */
+  .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .about-body p { color: var(--cream); opacity: 0.9; font-size: 1.02rem; margin-bottom: 18px; }
+  .founder-note {
+    border-left: 3px solid var(--gold); padding: 4px 0 4px 24px; margin-top: 26px;
+    font-style: italic; color: var(--gold-soft); font-size: 1.05rem; line-height: 1.5;
   }
-  .portfolio-note a {
-    color: var(--gold-bright);
-    text-decoration: none;
-    border-bottom: 1px solid var(--gold);
+  .founder-card { background: var(--royal); border: 1px solid rgba(242,184,75,0.3); border-radius: 8px; padding: 32px; }
+  .founder-portrait {
+    width: 100%; aspect-ratio: 4 / 3; border-radius: 6px; margin-bottom: 22px;
+    background: repeating-linear-gradient(135deg, rgba(242,184,75,0.08) 0 12px, rgba(242,184,75,0.03) 12px 24px), var(--indigo);
+    border: 1px dashed rgba(242,184,75,0.4);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    color: var(--muted); font-family: var(--font-label); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 20px;
   }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px solid rgba(242,184,75,0.18); font-size: 0.92rem; }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .t-mark { color: var(--gold); font-family: var(--font-label); letter-spacing: 0.1em; font-size: 0.72rem; text-transform: uppercase; white-space: nowrap; padding-top: 2px; }
+  .timeline .t-text { color: var(--cream); opacity: 0.9; }
 
-  /* ---------- ABOUT ---------- */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
+  /* ---------- STUDIO ---------- */
+  .studio-lead { max-width: 660px; margin: 0 auto 20px; text-align: center; color: var(--muted); font-size: 1.05rem; }
+  .pilot-banner {
+    max-width: 660px; margin: 0 auto 46px; text-align: center;
+    background: rgba(242,184,75,0.1); border: 1px solid rgba(242,184,75,0.35);
+    border-radius: 8px; padding: 14px 22px; color: var(--gold-soft); font-size: 0.95rem;
   }
-  .about-body p { color: var(--muted); font-size: 1.02rem; margin-bottom: 18px; }
-  .pull-quote {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.5rem;
-    line-height: 1.4;
-    color: var(--gold-bright);
-    border-left: 3px solid var(--gold);
-    padding: 6px 0 6px 26px;
-  }
-  .name-split {
-    background: var(--plum);
-    border: 1px solid rgba(212,175,106,0.3);
-    border-radius: 4px;
-    padding: 32px;
-  }
-  .name-split .row {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(212,175,106,0.2);
-  }
-  .name-split .row:last-child { border-bottom: none; }
-  .name-split .word {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--gold-bright);
-  }
-  .name-split .meaning {
-    font-family: var(--font-label);
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    color: var(--muted);
-    text-align: right;
-    max-width: 60%;
-  }
+  .studio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .service-card { background: linear-gradient(160deg, var(--royal), var(--indigo)); border: 1px solid rgba(242,184,75,0.25); border-radius: 8px; padding: 30px 26px; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .service-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .service-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--cream); }
+  .service-card .deliver { color: var(--muted); font-size: 0.9rem; margin: 0 0 14px; }
+  .service-card .bestfor { font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
 
-  /* ---------- STUDIO / SERVICES ---------- */
-  .studio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-  }
-  .service-card {
-    background: linear-gradient(160deg, var(--plum), var(--ink));
-    border: 1px solid rgba(212,175,106,0.25);
-    border-radius: 6px;
-    padding: 32px 28px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-  .service-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-  }
-  .service-card .icon {
-    width: 40px; height: 40px;
-    margin-bottom: 18px;
-    color: var(--gold);
-  }
-  .service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: var(--ivory);
-  }
-  .service-card p {
-    color: var(--muted);
-    font-size: 0.92rem;
-    margin: 0;
-  }
-
-  .studio-note {
-    margin-top: 40px;
-    padding: 20px 24px;
-    border: 1px dashed rgba(212,175,106,0.4);
-    border-radius: 6px;
-    font-size: 0.88rem;
-    color: var(--muted);
-    text-align: center;
-  }
-  .studio-note strong { color: var(--gold-bright); }
+  /* ---------- WORK ---------- */
+  .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .work-card { background: var(--royal); border: 1px solid rgba(242,184,75,0.28); border-radius: 8px; padding: 30px; }
+  .work-card .tag { display: inline-block; font-family: var(--font-label); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+  .work-card h3 { font-size: 1.35rem; color: var(--cream); margin-bottom: 10px; }
+  .work-card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  .work-note { text-align: center; margin-top: 40px; padding: 18px 22px; border: 1px dashed rgba(242,184,75,0.4); border-radius: 8px; color: var(--muted); font-size: 0.9rem; }
 
   /* ---------- CONTACT ---------- */
-  .contact-box {
-    max-width: 640px;
-    margin: 0 auto;
-    background: var(--plum);
-    border: 1px solid rgba(212,175,106,0.3);
-    border-radius: 8px;
-    padding: 44px;
+  .contact-box { max-width: 680px; margin: 0 auto; background: var(--royal); border: 1px solid rgba(242,184,75,0.3); border-radius: 10px; padding: 44px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form-row { margin-bottom: 0; display: flex; flex-direction: column; gap: 7px; }
+  .form-row.full { grid-column: 1 / -1; }
+  .form-row label { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .form-row input, .form-row select, .form-row textarea {
+    background: rgba(0,0,0,0.25); border: 1px solid rgba(242,184,75,0.35); border-radius: 5px;
+    padding: 12px 14px; color: var(--cream); font-family: var(--font-body); font-size: 0.95rem; resize: vertical;
   }
-  .form-row { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
-  .form-row label {
-    font-family: var(--font-label);
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .form-row input, .form-row textarea {
-    background: rgba(0,0,0,0.25);
-    border: 1px solid rgba(212,175,106,0.35);
-    border-radius: 4px;
-    padding: 12px 14px;
-    color: var(--ivory);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    resize: vertical;
-  }
-  .form-row input:focus, .form-row textarea:focus {
-    outline: none;
-    border-color: var(--gold-bright);
-  }
-  .contact-alt {
-    text-align: center;
-    margin-top: 28px;
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-  .contact-alt a { color: var(--gold-bright); text-decoration: none; }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: var(--gold); }
+  .form-row select option { background: var(--indigo); }
+  .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .consent input { width: auto; margin-top: 3px; }
+  .contact-alt { text-align: center; margin-top: 26px; color: var(--muted); font-size: 0.9rem; }
+  .contact-alt a { color: var(--gold-soft); text-decoration: none; }
 
   /* ---------- FOOTER ---------- */
-  footer {
-    border-top: 1px solid rgba(212,175,106,0.2);
-    padding: 40px 0;
-  }
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
+  footer { border-top: 1px solid rgba(242,184,75,0.2); padding: 40px 0; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   .footer-inner .brand-mark span { font-size: 1rem; }
-  .footer-links { display: flex; gap: 22px; }
-  .footer-links a {
-    font-family: var(--font-label);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-  }
-  .footer-links a:hover { color: var(--gold-bright); }
-  .footer-fine {
-    font-size: 0.78rem;
-    color: var(--muted);
-    opacity: 0.7;
-  }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a { font-family: var(--font-label); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); }
+  .footer-links a:hover { color: var(--gold-soft); }
+  .footer-fine { font-size: 0.78rem; color: var(--muted); opacity: 0.7; }
 
   /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 820px) {
-    .about-grid { grid-template-columns: 1fr; gap: 36px; }
-  }
-  @media (max-width: 720px) {
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 640px) {
     nav.links, .nav-cta { display: none; }
     .menu-toggle { display: block; }
-    nav.links.open {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0; right: 0;
-      background: var(--ink);
-      padding: 20px 24px;
-      gap: 18px;
-      border-bottom: 1px solid rgba(212,175,106,0.2);
-    }
-    .section { padding: 70px 0; }
+    nav.links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--indigo-deep); padding: 20px 24px; gap: 18px; border-bottom: 1px solid rgba(242,184,75,0.2); }
+    .section { padding: 64px 0; }
+    .form-grid { grid-template-columns: 1fr; }
+    .contact-box { padding: 30px 22px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .ticker-track { animation: none; }
-    .service-card:hover { transform: none; }
+    .lensy-wrap, .lensy-tally, .lensy-iris { animation: none; }
+    .service-card:hover, .btn-solid:hover { transform: none; }
   }
 </style>
 </head>
@@ -532,12 +273,13 @@
       <span>ReelRastha</span>
     </a>
     <nav class="links" id="navLinks">
-      <a href="#showing">Now Showing</a>
-      <a href="#rastha">The Rastha</a>
-      <a href="#studio">The Studio</a>
-      <a href="#contact">Book a Screening</a>
+      <a href="#opinions">Opinions</a>
+      <a href="#about">About</a>
+      <a href="#studio">Studio</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="https://www.instagram.com/reelrastha/" target="_blank" rel="noopener">Follow</a>
+    <a class="nav-cta" href="#contact">Work with us</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
   </div>
 </header>
@@ -548,88 +290,75 @@
   <section class="hero wrap">
     <div class="lensy-wrap" aria-hidden="true">
       <svg viewBox="130 60 460 540" xmlns="http://www.w3.org/2000/svg">
-        <!-- legs -->
-        <path fill="none" stroke="#d4af6a" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M320 462 L310 520 L305 565"/>
-        <rect x="280" y="558" width="50" height="22" rx="11" fill="#d4af6a"/>
-        <path fill="none" stroke="#d4af6a" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M385 462 L395 520 L400 565"/>
-        <rect x="375" y="558" width="50" height="22" rx="11" fill="#d4af6a"/>
-        <!-- torso -->
-        <path fill="none" stroke="#d4af6a" stroke-width="9" stroke-linejoin="round" d="M270 340 Q255 400 268 440 Q280 470 355 472 Q430 470 442 440 Q452 400 435 340 Q355 322 270 340 Z"/>
-        <line x1="290" y1="380" x2="420" y2="380" stroke="#d4af6a" stroke-opacity="0.35" stroke-width="4"/>
-        <circle cx="305" cy="410" r="6" fill="#d4af6a" opacity="0.6"/>
-        <circle cx="325" cy="410" r="6" fill="#d4af6a" opacity="0.6"/>
-        <!-- right arm akimbo -->
-        <path fill="none" stroke="#d4af6a" stroke-width="13" stroke-linecap="round" d="M425 360 Q470 375 465 415 Q462 435 435 442"/>
-        <!-- scarf -->
-        <path fill="#f2ca83" d="M320 330 Q350 355 380 330 L370 350 Q350 365 330 350 Z"/>
-        <!-- left arm + clapperboard -->
-        <path fill="none" stroke="#d4af6a" stroke-width="13" stroke-linecap="round" d="M285 355 Q225 330 205 270 Q198 245 215 225"/>
-        <circle cx="218" cy="216" r="22" fill="#d4af6a"/>
+        <path fill="none" stroke="#F2B84B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M320 462 L310 520 L305 565"/>
+        <rect x="280" y="558" width="50" height="22" rx="11" fill="#F2B84B"/>
+        <path fill="none" stroke="#F2B84B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M385 462 L395 520 L400 565"/>
+        <rect x="375" y="558" width="50" height="22" rx="11" fill="#F2B84B"/>
+        <path fill="none" stroke="#F2B84B" stroke-width="9" stroke-linejoin="round" d="M270 340 Q255 400 268 440 Q280 470 355 472 Q430 470 442 440 Q452 400 435 340 Q355 322 270 340 Z"/>
+        <line x1="290" y1="380" x2="420" y2="380" stroke="#F2B84B" stroke-opacity="0.35" stroke-width="4"/>
+        <circle cx="305" cy="410" r="6" fill="#F2B84B" opacity="0.6"/>
+        <circle cx="325" cy="410" r="6" fill="#F2B84B" opacity="0.6"/>
+        <path fill="none" stroke="#F2B84B" stroke-width="13" stroke-linecap="round" d="M425 360 Q470 375 465 415 Q462 435 435 442"/>
+        <path fill="#f5c76e" d="M320 330 Q350 355 380 330 L370 350 Q350 365 330 350 Z"/>
+        <path fill="none" stroke="#F2B84B" stroke-width="13" stroke-linecap="round" d="M285 355 Q225 330 205 270 Q198 245 215 225"/>
+        <circle cx="218" cy="216" r="22" fill="#F2B84B"/>
         <g transform="translate(190,175) rotate(-18)">
-          <rect x="0" y="14" width="52" height="34" rx="3" fill="#2e1b47" stroke="#d4af6a" stroke-width="5"/>
-          <rect x="-2" y="0" width="56" height="16" rx="3" fill="#d4af6a"/>
-          <line x1="4" y1="8" x2="14" y2="0" stroke="#2e1b47" stroke-width="4"/>
-          <line x1="20" y1="8" x2="30" y2="0" stroke="#2e1b47" stroke-width="4"/>
-          <line x1="36" y1="8" x2="46" y2="0" stroke="#2e1b47" stroke-width="4"/>
+          <rect x="0" y="14" width="52" height="34" rx="3" fill="#241B4B" stroke="#F2B84B" stroke-width="5"/>
+          <rect x="-2" y="0" width="56" height="16" rx="3" fill="#F2B84B"/>
+          <line x1="4" y1="8" x2="14" y2="0" stroke="#241B4B" stroke-width="4"/>
+          <line x1="20" y1="8" x2="30" y2="0" stroke="#241B4B" stroke-width="4"/>
+          <line x1="36" y1="8" x2="46" y2="0" stroke="#241B4B" stroke-width="4"/>
         </g>
-        <!-- head -->
         <g transform="rotate(-7 350 210)">
-          <rect x="322" y="90" width="56" height="28" rx="6" fill="none" stroke="#d4af6a" stroke-width="9"/>
-          <circle cx="350" cy="205" r="105" fill="#2e1b47" stroke="#d4af6a" stroke-width="9"/>
-          <circle cx="255" cy="185" r="11" fill="#d4af6a"/>
-          <circle cx="445" cy="185" r="11" fill="#d4af6a"/>
+          <rect x="322" y="90" width="56" height="28" rx="6" fill="none" stroke="#F2B84B" stroke-width="9"/>
+          <circle cx="350" cy="205" r="105" style="fill:#241B4B;stroke:#F2B84B;stroke-width:9px;"/>
+          <circle cx="255" cy="185" r="11" fill="#F2B84B"/>
+          <circle cx="445" cy="185" r="11" fill="#F2B84B"/>
           <circle cx="255" cy="185" r="4" fill="#150c28"/>
           <circle cx="445" cy="185" r="4" fill="#150c28"/>
           <g class="lensy-iris">
-            <circle cx="350" cy="215" r="58" fill="none" stroke="#d4af6a" stroke-width="9"/>
-            <circle cx="350" cy="215" r="42" fill="#1c1130" stroke="#d4af6a" stroke-width="4"/>
-            <path d="M350 215 L350 178 A37 37 0 0 1 382 197 Z" fill="#d4af6a" opacity="0.85"/>
-            <path d="M350 215 L382 197 A37 37 0 0 1 382 233 Z" fill="#f2ca83" opacity="0.9"/>
-            <path d="M350 215 L382 233 A37 37 0 0 1 350 252 Z" fill="#d4af6a" opacity="0.7"/>
-            <path d="M350 215 L350 252 A37 37 0 0 1 318 197 Z" fill="#f2ca83" opacity="0.75"/>
+            <circle cx="350" cy="215" r="58" fill="none" stroke="#F2B84B" stroke-width="9"/>
+            <circle cx="350" cy="215" r="42" fill="#16102e" stroke="#F2B84B" stroke-width="4"/>
+            <path d="M350 215 L350 178 A37 37 0 0 1 382 197 Z" fill="#F2B84B" opacity="0.85"/>
+            <path d="M350 215 L382 197 A37 37 0 0 1 382 233 Z" fill="#f5c76e" opacity="0.9"/>
+            <path d="M350 215 L382 233 A37 37 0 0 1 350 252 Z" fill="#F2B84B" opacity="0.7"/>
+            <path d="M350 215 L350 252 A37 37 0 0 1 318 197 Z" fill="#f5c76e" opacity="0.75"/>
             <circle cx="350" cy="215" r="16" fill="#150c28"/>
-            <circle cx="357" cy="207" r="6" fill="#f3ede4"/>
+            <circle cx="357" cy="207" r="6" fill="#F8F3E8"/>
           </g>
-          <path d="M295 145 Q315 128 345 138" fill="none" stroke="#d4af6a" stroke-width="8" stroke-linecap="round"/>
-          <path d="M320 300 Q350 316 390 296" fill="none" stroke="#d4af6a" stroke-width="8" stroke-linecap="round"/>
-          <circle class="lensy-tally" cx="440" cy="260" r="9" fill="#f2ca83"/>
+          <path d="M295 145 Q315 128 345 138" fill="none" stroke="#F2B84B" stroke-width="8" stroke-linecap="round"/>
+          <path d="M320 300 Q350 316 390 296" fill="none" stroke="#F2B84B" stroke-width="8" stroke-linecap="round"/>
+          <circle class="lensy-tally" cx="440" cy="260" r="9" fill="#f5c76e"/>
         </g>
       </svg>
     </div>
     <span class="eyebrow">A ReelRastha Production</span>
-    <h1>ReelRastha</h1>
-    <p class="tagline">No agenda, no script — just me, yelling about cinema into the void.</p>
+    <h1>Opinions for audiences. Storytelling for films.</h1>
+    <p class="subhead">ReelRastha is a cinema opinion platform and emerging content studio helping films, filmmakers, and creators find the audience they deserve.</p>
+    <p class="personality">No agenda. No star ratings. Just cinema, argued with feeling.</p>
     <div class="hero-ctas">
-      <a class="btn btn-solid" href="https://www.instagram.com/reelrastha/" target="_blank" rel="noopener">Follow on Instagram</a>
-      <a class="btn btn-ghost" href="#showing">See the opinions ↓</a>
+      <a class="btn btn-solid" href="#opinions">Explore the opinions</a>
+      <a class="btn btn-ghost" href="#studio">Work with ReelRastha</a>
     </div>
   </section>
 
-  <!-- TICKER -->
-  <div class="ticker-band">
-    <div class="ticker-track">
-      <span>★ NOW SCREENING: MOLLYWOOD TIMES</span>
-      <span>★ NO AGENDA, NO SCRIPT</span>
-      <span>★ YOU WATCHED THIS MOVIE WRONG</span>
-      <span>★ THIS FLOPPED AT THE BOX OFFICE, IT'S ACTUALLY A MASTERPIECE</span>
-      <span>★ RANK THESE 5 FILMS</span>
-      <span>★ UNDERRATED FILMS NOBODY TALKS ABOUT</span>
-      <!-- duplicate for seamless loop -->
-      <span>★ NOW SCREENING: MOLLYWOOD TIMES</span>
-      <span>★ NO AGENDA, NO SCRIPT</span>
-      <span>★ YOU WATCHED THIS MOVIE WRONG</span>
-      <span>★ THIS FLOPPED AT THE BOX OFFICE, IT'S ACTUALLY A MASTERPIECE</span>
-      <span>★ RANK THESE 5 FILMS</span>
-      <span>★ UNDERRATED FILMS NOBODY TALKS ABOUT</span>
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-inner wrap">
+      <span>Original opinions</span>
+      <span class="dot">★</span>
+      <span>Indian and world cinema</span>
+      <span class="dot">★</span>
+      <span>Social-first film storytelling</span>
     </div>
   </div>
 
-  <!-- NOW SHOWING / PORTFOLIO -->
-  <section class="section wrap" id="showing">
-    <div class="section-head">
-      <span class="eyebrow">Now Showing</span>
-      <h2>Opinions, not reviews.</h2>
-      <p>Mollywood, Kollywood, Bollywood, Hollywood — if it's got a reel, we've got a rastha through it. Every post is a take, not a verdict.</p>
+  <!-- OPINIONS -->
+  <section class="section wrap" id="opinions">
+    <div class="opinions-intro">
+      <span class="kicker">Now Showing</span>
+      <h2 style="font-size: clamp(2rem, 4.2vw, 2.8rem);">Opinions, not reviews.</h2>
+      <p class="body">A review tries to settle the argument. A ReelRastha opinion starts one. Read the latest take, disagree loudly, and bring another film into the conversation.</p>
     </div>
     <div class="card-grid">
       <article class="opinion-card">
@@ -645,10 +374,10 @@
       </article>
       <article class="opinion-card">
         <div>
-          <span class="oc-eyebrow">Coming Up</span>
-          <h3 class="oc-title">Rank These 5 Films</h3>
+          <span class="oc-eyebrow">You Watched This Wrong</span>
+          <h3 class="oc-title">Contrarian Takes</h3>
         </div>
-        <p class="oc-body">The Tuesday carousel format built to start an argument in the comments, not just collect likes.</p>
+        <p class="oc-body">A recurring series that argues the reading everyone missed. Built to be screenshotted and fought about in the comments.</p>
         <div>
           <div class="oc-divider"></div>
           <span class="oc-footer">A ReelRastha Opinion</span>
@@ -656,100 +385,180 @@
       </article>
       <article class="opinion-card">
         <div>
-          <span class="oc-eyebrow">Coming Up</span>
-          <h3 class="oc-title">Underrated Films Nobody Talks About</h3>
+          <span class="oc-eyebrow">The Film Deserved Better</span>
+          <h3 class="oc-title">Rediscoveries</h3>
         </div>
-        <p class="oc-body">The Saturday carousel slot, reserved for the films that deserved way more noise than they got.</p>
+        <p class="oc-body">The films that got buried and shouldn't have. A save-worthy series for the ones worth a second look.</p>
         <div>
           <div class="oc-divider"></div>
           <span class="oc-footer">A ReelRastha Opinion</span>
         </div>
       </article>
     </div>
-    <p class="portfolio-note">This is a sample of the reel. <a href="https://www.instagram.com/reelrastha/" target="_blank" rel="noopener">See the full feed on Instagram →</a></p>
+    <p class="opinions-note">This is a sample of the reel. <a href="https://www.instagram.com/reelrastha/" target="_blank" rel="noopener">See the full feed on Instagram →</a></p>
   </section>
 
-  <!-- THE RASTHA / ABOUT -->
-  <section class="section wrap" id="rastha">
+  <!-- ABOUT / FOUNDER -->
+  <section class="section wrap" id="about">
     <div class="about-grid">
       <div class="about-body">
-        <span class="eyebrow">The Rastha</span>
+        <span class="kicker">The Rastha — Why ReelRastha exists</span>
         <h2 style="margin-bottom: 20px; font-size: clamp(1.8rem, 3.6vw, 2.6rem);">Reel path. Cinema soul.</h2>
-        <p>ReelRastha isn't a review page. It's a running argument with cinema — loud, opinionated, and allergic to star ratings. No single industry gets the spotlight; if a film exists, it's fair game.</p>
-        <p>The name does double duty on purpose: <em style="font-style: italic;">reel</em> for the medium, <em style="font-style: italic;">rastha</em> — path, or road — for the journey every film takes you on. Desi at its core, wide open in its taste.</p>
-        <div class="pull-quote">"We yell about cinema into the void. Turns out the void yells back."</div>
+        <p>ReelRastha began with a simple frustration: too much film conversation sounds like a verdict. This is a place for something more personal, the detail that stayed after the credits, the scene that changed meaning on the drive home, and the unpopular opinion worth defending.</p>
+        <p>The name brings the idea together: reel for the medium, rastha for the road. A cinematic journey, one opinion at a time.</p>
+        <div class="founder-note">"I am building ReelRastha in public, one film, one experiment, and one audience conversation at a time. The long-term goal is to help films not only get reviewed, but get understood, remembered, and shared."</div>
       </div>
-      <div class="name-split">
-        <div class="row">
-          <span class="word">Reel</span>
-          <span class="meaning">The cinema. The craft. The frame.</span>
-        </div>
-        <div class="row">
-          <span class="word">Rastha</span>
-          <span class="meaning">Hindi / Urdu for path, road, journey.</span>
-        </div>
-        <div class="row">
-          <span class="word">Together</span>
-          <span class="meaning">A cinematic road trip, one opinion at a time.</span>
-        </div>
+      <div class="founder-card">
+        <div class="founder-portrait">Add a founder portrait or short intro video here</div>
+        <ul class="timeline">
+          <li><span class="t-mark">Week 1</span><span class="t-text">ReelRastha page launched, visual identity built</span></li>
+          <li><span class="t-mark">First</span><span class="t-text">First published opinion: Mollywood Times</span></li>
+          <li><span class="t-mark">Next</span><span class="t-text">First self-initiated campaign experiment</span></li>
+          <li><span class="t-mark">Goal</span><span class="t-text">First client pilot project</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- THE STUDIO / SERVICES -->
+  <!-- STUDIO -->
   <section class="section wrap" id="studio">
     <div class="section-head">
-      <span class="eyebrow">The Studio</span>
-      <h2>Same energy, for your brand.</h2>
-      <p>ReelRastha started as one page yelling about cinema. Now that same reel-to-rastha pipeline — voice, visuals, and strategy — is available for other creators and brands.</p>
+      <span class="kicker">ReelRastha Studio</span>
+      <h2>Film marketing with a cinephile's instinct.</h2>
     </div>
+    <p class="studio-lead">ReelRastha Studio creates social-first campaign ideas, copy, and content systems for films and creators. The same instinct behind the opinions, applied to a film campaign.</p>
+    <p class="pilot-banner">We are currently accepting a small number of pilot projects while building the first public case studies.</p>
     <div class="studio-grid">
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="10" width="36" height="28" rx="3"/><path d="M6 18h36"/><circle cx="14" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
-        <h3>Carousel & Content Design</h3>
-        <p>The same indigo-and-gold template system built for ReelRastha's own carousels, adapted to your palette and voice.</p>
+        <h3>Film Positioning Sprint</h3>
+        <p class="deliver">Core audience, campaign angle, voice guide, 10 hooks, and a launch message.</p>
+        <span class="bestfor">Best for: indie films before poster/trailer rollout</span>
       </div>
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="8" width="36" height="34" rx="3"/><path d="M6 18h36M15 4v8M33 4v8"/></svg>
-        <h3>Content Calendars & Strategy</h3>
-        <p>The same seven-day rhythm that runs ReelRastha's own feed: hot takes, rankings, trivia, and weekend picks, each with a job to do.</p>
+        <h3>Release-Week Content Pack</h3>
+        <p class="deliver">Caption set, 2 carousels, 3 short-reel scripts, story prompts, and a CTA bank.</p>
+        <span class="bestfor">Best for: films with a confirmed release window</span>
       </div>
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 34V14a4 4 0 014-4h24a4 4 0 014 4v20l-8-6H12a4 4 0 01-4-4z"/></svg>
-        <h3>Brand Voice & Copywriting</h3>
-        <p>Opinions like the Mollywood Times take: sourced, argued, and never softened just to match the "official" review.</p>
+        <h3>Social Content System</h3>
+        <p class="deliver">30-day calendar, recurring series, templates, and platform-specific copy.</p>
+        <span class="bestfor">Best for: creators, film pages, production houses</span>
       </div>
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 36l10-14 8 8 12-18 6 10"/></svg>
-        <h3>Growth & Hashtag Strategy</h3>
-        <p>Hashtag mixing, tagging the official accounts, and Instagram's Collab feature: the same tactics driving ReelRastha's own growth.</p>
+        <h3>Trailer & Poster Rollout Copy</h3>
+        <p class="deliver">Teaser lines, countdown copy, reveal captions, and comment prompts.</p>
+        <span class="bestfor">Best for: campaigns with existing visual assets</span>
+      </div>
+      <div class="service-card">
+        <h3>Audience Conversation Plan</h3>
+        <p class="deliver">Community hooks, collaboration list, response playbook, and a weekly learning loop.</p>
+        <span class="bestfor">Best for: teams that want organic discussion</span>
       </div>
     </div>
-    <p class="studio-note"><strong>Placeholder services</strong> — swap these for whatever the studio actually offers once the list is locked in. Same goes for the studio name if it ends up separate from ReelRastha.</p>
+  </section>
+
+  <!-- WORK -->
+  <section class="section wrap" id="work">
+    <div class="section-head">
+      <span class="kicker">Work — Experiments in public</span>
+      <h2>Proof, built in the open.</h2>
+      <p>Self-initiated concept campaigns for real films using only public assets. These are concept campaigns, not commissioned work, shown to demonstrate how ReelRastha thinks.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <span class="tag">Concept Campaign</span>
+        <h3>Campaign Study One</h3>
+        <p>Problem, target audience, central idea, content examples, and how success would be measured. Coming soon as the first public breakdown.</p>
+      </div>
+      <div class="work-card">
+        <span class="tag">Concept Campaign</span>
+        <h3>Campaign Study Two</h3>
+        <p>A second self-initiated breakdown for a real film, built to show the full thinking from audience to hooks to rollout.</p>
+      </div>
+      <div class="work-card">
+        <span class="tag">Internal Case Study</span>
+        <h3>Growing ReelRastha</h3>
+        <p>ReelRastha's own Instagram growth, shown transparently as a working case study, with real numbers as they come in.</p>
+      </div>
+    </div>
+    <p class="work-note">These are labeled concept campaigns while the first client pilots are underway. Real outcomes and client quotes will replace them as they land.</p>
   </section>
 
   <!-- CONTACT -->
   <section class="section wrap" id="contact">
     <div class="section-head">
-      <span class="eyebrow">Book a Screening</span>
+      <span class="kicker">Book a Screening</span>
       <h2>Let's start the reel.</h2>
-      <p>Got a brand that needs a voice, or just want to talk cinema? Drop a line below.</p>
+      <p>Tell us what you are releasing, who you want to reach, and where the campaign stands. We will reply with the best next step: a quick conversation, a pilot scope, or an honest recommendation.</p>
     </div>
     <div class="contact-box">
-      <form action="mailto:hello@reelrastha.com" method="post" enctype="text/plain">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+      <form id="contactForm" action="mailto:hello@reelrastha.com" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="role">Role / Company</label>
+            <input type="text" id="role" name="role">
+          </div>
+          <div class="form-row">
+            <label for="title">Project or Film Title</label>
+            <input type="text" id="title" name="title">
+          </div>
+          <div class="form-row">
+            <label for="ptype">Project Type</label>
+            <select id="ptype" name="project_type">
+              <option value="">Select…</option>
+              <option>Film</option>
+              <option>Creator brand</option>
+              <option>Production house</option>
+              <option>Film page</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="stage">Current Stage</label>
+            <select id="stage" name="stage">
+              <option value="">Select…</option>
+              <option>Development</option>
+              <option>First look</option>
+              <option>Trailer</option>
+              <option>Release window</option>
+              <option>Post-release</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="date">Release / Target Date</label>
+            <input type="text" id="date" name="target_date" placeholder="e.g. March 2026">
+          </div>
+          <div class="form-row">
+            <label for="budget">Budget Range (optional)</label>
+            <input type="text" id="budget" name="budget">
+          </div>
+          <div class="form-row full">
+            <label for="link">Website, Trailer, or Social Link</label>
+            <input type="url" id="link" name="link" placeholder="https://">
+          </div>
+          <div class="form-row full">
+            <label for="goal">Primary Goal</label>
+            <input type="text" id="goal" name="goal" placeholder="What does a win look like?">
+          </div>
+          <div class="form-row full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <div class="form-row full">
+            <label class="consent"><input type="checkbox" required> I agree to be contacted about this inquiry and accept the privacy terms.</label>
+          </div>
+          <div class="form-row full">
+            <button type="submit" class="btn btn-solid" style="width:100%;">Send it</button>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-solid" style="border:none; cursor:pointer; width:100%;">Send it</button>
       </form>
       <p class="contact-alt">Or just DM <a href="https://www.instagram.com/reelrastha/" target="_blank" rel="noopener">@reelrastha</a> on Instagram.</p>
     </div>
@@ -767,9 +576,11 @@
       <span>ReelRastha</span>
     </a>
     <div class="footer-links">
+      <a href="#opinions">Opinions</a>
+      <a href="#about">About</a>
+      <a href="#studio">Studio</a>
+      <a href="#work">Work</a>
       <a href="https://www.instagram.com/reelrastha/" target="_blank" rel="noopener">Instagram</a>
-      <a href="#studio">The Studio</a>
-      <a href="#contact">Contact</a>
     </div>
     <span class="footer-fine">© 2026 ReelRastha. Opinions, not reviews.</span>
   </div>
@@ -778,9 +589,7 @@
 <script>
   const toggle = document.getElementById('menuToggle');
   const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-  });
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 </script>
 
